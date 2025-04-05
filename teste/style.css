@@ -1,0 +1,259 @@
+:root {
+    --main-color: #d3ad7f;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255,255,255,0.3);
+    font-size: 10px;
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+    text-decoration: none; /* text-decoration aplica estilo ao texto e o valor none remove os estilos */
+    text-transform: capitalize; /* ttext-transform: comtrola a capitalização do texto e o valor
+                                  capitalize deixa a primeira .=letra de cada palavra em maiuscula */
+   transition: 0.2 linear ;
+   font-family: "Roboto", serif;
+
+}
+
+body{
+    background-color: var(--bg);
+}
+
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: var(--border);
+    background-color: black;
+}
+
+section{
+    padding: 3rem 2rem;
+    margin: 0 auto;   /*  margin: 0 auto; o 0 define a margen superior e inferior como zero (sem espaçamento)
+    já o auto nesse caso faz com que as margens esquerda e direita se ajuste, automaticamente */
+    max-width: 1200px;
+}
+
+.header > section{
+        
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* justify-content: space-between; 
+    Distribui os itens igualmente no eixo principal, 
+    colocando o primeiro à esquerda e o último à direita, 
+    sem espaçamento nas laterais. */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.navbar > a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.navbar > a:hover{
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+.icons > i {
+    margin: 1rem;
+    cursor: pointer;
+}
+.icons > i:hover{
+    width: 40px;
+    height: 40px;
+}
+i{
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.btn{
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+}
+.btn:hover{
+    letter-spacing: 0.1rem; /*    letter-spacing da um espaçamento entre as letras, nesse caso quando
+    for passado o mouse vai dá uma crescida*/
+
+}
+
+.home-container {
+    background: url(./imagem/home-img.jpg);
+    height: 100vh;
+    position: center;
+    background-size: cover;
+}
+  /* isso aqui vai evitar que a section iginore o menu e fique por cim
+  dele quando escrolado, codigo pra jogar no centro */
+.home-container section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+.content {
+    max-width: 60rem;
+}
+
+.content h3 {
+    color: #fff;
+    font-size: 6rem;
+
+}
+.content p{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.6; /* tamanho das linhas */
+    padding: 1rem 0;
+}
+ .title {
+   font-size: 4rem;
+   color: var(--main-color);
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 4rem;
+ 
+}
+.title span {
+    color: white;
+    text-transform: uppercase;
+}
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color:rgb(5, 5, 5);
+    gap: 1.5rem;
+    
+}
+
+.about .row .content {
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: white;
+
+}
+
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/*  estilazão abaixo das box de menu */
+
+.menu .box-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+     gap: 1.5rem;
+}
+
+/*  display: grid; organiza vrios itens de forma automatica sem inteferir se vou aumentar
+    ou diminuir o numero de itens */
+
+
+ /*   grid-template-columns: ; com ele eu 
+    digo como euquero que seja a organização das colunas, nesse caso ela 
+    vai se repetir indepedente de quantas colunas tem com o repeat() */
+
+.menu .box-container .box{
+      text-align: center;
+      border: var(--border);
+      padding: 5rem;
+      cursor: pointer;
+}
+
+.menu .box-container .box img{
+    height: 10rem;
+}
+
+.menu .box-container .box h3{
+    color: white;
+    font-size: 2rem;
+    padding: 1rem o;
+}
+
+.menu .box-container .box .price{
+    color: white;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: 100;
+}
+
+.menu .box-container .box:hover{
+    background-color: white;
+}
+
+.menu .box-container .box:hover>*{
+    color: black;
+}
+ 
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    padding: 3rem 2rem;
+    text-align: center;
+   
+}
+
+.review .box-container .box {
+    border: var(--border);
+    color: white;
+    padding: 2rem 0;
+    line-height: 1.5;
+ 
+}
+
+
+.box-container .box h3{
+    font-size: 1.3rem;
+    margin: 10px;
+    font-weight: 500;
+    
+}
+.box-container .box p{
+    font-size: 1.8rem;
+    margin: 20px;
+    font-weight: 200;
+}
+
+.box-container .box .user{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+.address {
+    display: flex; /* por padrão o flex fica em linha */
+    align-items: center;
+    flex-direction: column; /* e com o flex:direction: columm, eu tornei a direção dos itens
+    em coluna de cima para baixo, permitindo que se organizem em coluna um a baixo do outro */
+}
